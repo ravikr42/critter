@@ -4,6 +4,7 @@ import com.udacity.jdnd.course3.critter.user.EmployeeSkill;
 
 import javax.persistence.*;
 import java.time.DayOfWeek;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -16,10 +17,10 @@ public class Employee {
     private String name;
 
     @ElementCollection
-    private Set<EmployeeSkill> skills;
+    private Set<EmployeeSkill> skills = new HashSet<EmployeeSkill>();
 
     @ElementCollection
-    private Set<DayOfWeek> daysAvailable;
+    private Set<DayOfWeek> daysAvailable = new HashSet<DayOfWeek>();
 
     public Employee(long id, String name, Set<EmployeeSkill> skills, Set<DayOfWeek> daysAvailable) {
         this.id = id;
